@@ -19,32 +19,33 @@
 //     super("ui");
 //   }
 
+//   init({ level = 1, points = 0 }) {
+//     this.level = level;
+//     this.points = points;
+//   }
+
 //   create() {
-//     this.colliderCount = 0;
 //     // add text with count collider and date
-//     this.text = this.add.text(10, 10, `Collider count: ${this.colliderCount}`, {
-//       font: "16px Courier",
-//       fill: "#00ff00",
+//     this.text = this.add.text(
+//       10, 
+//       10, 
+//       `level: ${this.level} - Puntos: ${this.points} `, {
+//       font: "12px Impact",
+//       fill: "#ffffff",
 //     });
 
 //     // add listener to the event
-//     events.on("collider-event", this.colliderEvent, this);
+//     events.on("update", this.setText, this);
 //   }
 
-//   colliderEvent(data) {
-//     console.log("collider-event", data);
-
+//   setText(data) {
+//     console.log("actualizador datos", data);
 //     // update text
-//     this.colliderCount += 1;
-//     this.text.setText(
-//       `Collider count: ${this.colliderCount} / Last: ${data.fecha}`
-//     );
+//     this.level = data.level;
+//     this.points = data.points;
+   
+//     this.text.setText(`Nivel: ${this.level} - Puntos ${this.points}`);
 
-//       updateData(data) {
-//         console.log("update data")
-//         this.level =
-//         this.points =
-//       }
 
 //   }
 // }
